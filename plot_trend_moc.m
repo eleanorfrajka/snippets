@@ -1,5 +1,10 @@
+% Load your MOC time series here.  This should be in units of Sverdrups, on a monthly timescale (bin averaged 
+% per month, with the time step as the 15th of each month).
+% Time should be in Matlab time, i.e. January 1 2004 is 731947 as given by datenum(2004,1,1).
 moctimeseries = moc26.moc(:);
 moctimevector = moc26.time(:);
+
+% Create a time vector in years, for getting the coefficients out of regress in units of Sv/year and Sv.
 time_in_years_since_2004 = (moctimevector-datenum(2004,1,1))/365.25;
 
 % Plot the time series
